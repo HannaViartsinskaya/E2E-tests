@@ -1,18 +1,20 @@
-# Base image
-FROM node:18-alpine
+# Use Playwright base image
+FROM mcr.microsoft.com/playwright:v1.39.0-focal
 
 # Set working directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
-# Copy files
+# Copy package.json and package-lock.json
 COPY package*.json ./
-COPY . .
 
 # Install dependencies
-RUN npm install
+RUN npm ci
 
-# Expose port (if needed)
-EXPOSE 3000
+# Copy application files
+COPY . .
 
-# Start the app
-CMD ["npm", "start"]
+# Install Playwright browsers
+RUN npx playwright install --with-deps
+
+# Default command
+CMD ["npx", "playwright", "test"]
