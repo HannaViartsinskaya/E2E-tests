@@ -34,7 +34,6 @@ async modalChangePlantoProOpened() {
     await expect(this.changeModalProPlanHeader).toBeVisible();
  }
 async mainELementsForUpgradePloPlanPresent (){
-    //await expect(this.amountYearlyForProPlan).toBeVisible();
     await expect(this.kittleCreditsForProPlan).toBeVisible();
     await expect(this.subscriptionPlanSelector).toBeVisible();
 }
