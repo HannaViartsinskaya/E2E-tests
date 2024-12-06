@@ -14,7 +14,7 @@ test.describe('Pricing page tests', () => {
 
     await page.goto('');
     await pricingPage.clickGetProPlanBtn();
-    await pricingPage.clickAcceptCookies();
+//    await pricingPage.clickAcceptCookies();
     await loginModal.clickOnSignInOption();
     await loginModal.enterEmailPassword("hannanasi1995@gmail.com","384J6Ghb4-YSjLc");
     await loginModal.clickOnLoginBtn();
